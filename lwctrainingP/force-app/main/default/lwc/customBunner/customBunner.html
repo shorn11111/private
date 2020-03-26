@@ -1,0 +1,22 @@
+<!-- カスタムバナーコンポーネント -->
+<template>
+    <!-- コンテンツ -->
+    <div if:true={isVisible}>
+        <div class={clsAlertTheme} role="alert">
+            <span class={clsIconUtil} title={msgType}>
+                <lightning-icon icon-name={icoNameUtil} size="small" variant="inverse" styleclass="slds-icon slds-icon_small"></lightning-icon>
+            </span>
+            <div class="bigtext" if:true={isBigtext}>
+                <h2>{msgBody}</h2>
+            </div>
+            <div if:false={isBigtext}>
+                <h4>{msgBody}</h4>
+            </div>
+            <div class={clsBtnClose}>
+                <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="閉じる" onclick={doClose}>
+                    <lightning-icon icon-name="utility:close" size="x-small" variant="inverse" alternative-text="閉じる"></lightning-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</template>

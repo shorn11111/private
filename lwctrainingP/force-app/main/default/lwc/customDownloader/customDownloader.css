@@ -1,0 +1,12 @@
+.spinHolder {
+   position: absolute;
+}
+.allArea{
+   position: relative;
+   padding: 10px;
+}
+
+.error{
+   color:red;
+   text-align: center;
+}

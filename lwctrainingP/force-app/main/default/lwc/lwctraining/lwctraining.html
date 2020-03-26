@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="ファイルアップローダー" icon-name=custom:custom44>
+        <div class="slds-m-around_medium">
+            <template if:false={isImport}>
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-input
+                        type="file"
+                        label="CSVファイルアップロード" 
+                        accept="text/csv"
+                        onchange={handleFileChanged}>
+                    </lightning-input>
+                </div>
+            </template>
+            <template if:true={isImport}>
+                <div class="slds-box">
+                    {data}
+                </div>
+                <div>
+                        <p>上記データを取り込みますか？</p>
+                </div>
+                <div>
+                    <lightning-button variant="primary" label="取り込み" title="取り込み" onclick={handleImportClick}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

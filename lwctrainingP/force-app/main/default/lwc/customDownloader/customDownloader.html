@@ -1,0 +1,39 @@
+<template>
+  <div class="all">
+    <!-- 選択リスト -->
+    <div class="slds-grid slds-p-top_x-small">
+      <div class="slds-col slds-size_10-of-12">
+        <lightning-combobox label="指定先：アーティスト" name="Artist" value={artistRec} options={artistDataRec} onchange={handleArtistSelectRec}></lightning-combobox>
+      </div>
+    </div>
+    <!-- 選択リスト表示 -->
+    <div if:true={fileList}>
+      <div if:true={doSpin}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+      </div>
+      <div class= "slds-p-around_xx-large">
+        <!-- 選択リストでなし以外を選んだとき、ファイル選択リストをリスト化 -->
+        <div class="slds-form-element" role="group" aria-labelledby="picklist-group-label">
+          <span id="picklist-group-label" class="slds-form-element__label slds-form-element__legend">アーティスト内ファイル追加リスト</span>
+          <div class="slds-form-element__control">
+            <span class="slds-media__body">
+              <lightning-dual-listbox name="artist" label="※ctrl+A や shift+矢印キー で複数選択できます" source-label="選択前ファイル一覧" values={ListValue} selected-label="ダウンロードするファイル一覧" options={options} onchange={handleChange}>
+              </lightning-dual-listbox>
+              <!-- ダウンロード、キャンセルボタン -->
+              <!-- <section class="slds-clearfix"> -->
+                <div class="slds-col slds-float_right slds-m-top_large slds-m-horizontal_xx-large">
+                  <lightning-button class="slds-p-horizontal_x-small" label="キャンセル"  alternative-text="選択をキャンセルします" variant="nuetral" onclick={doclear}></lightning-button>
+                  <a if:true={download} href={getDownloadLink} class="slds-p-horizontal_x-small slds-button slds-button_brand slds-m-left_x-small" title="ダウンロード" variant="brand" onclick={doSave} >ダウンロード</a>
+                </div>
+              <!-- </section> -->
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- スピナー -->
+        <div if:true={doSpin}>
+          <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+    </div>
+  </div>
+</template>

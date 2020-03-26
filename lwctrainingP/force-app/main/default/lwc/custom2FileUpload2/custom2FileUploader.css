@@ -1,0 +1,9 @@
+.spinArea {
+    position: relative;
+}
+.spinHolder {
+    position: absolute;
+}
+.icn-style svg {
+    fill: currentColor;
+}
