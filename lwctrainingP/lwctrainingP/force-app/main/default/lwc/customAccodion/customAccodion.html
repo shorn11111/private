@@ -1,0 +1,25 @@
+<template>
+    <div class="slds-theme_default" style="border-radius:5px;">
+        <lightning-card title="Lightning Web Component UCHIDA" icon-name="standard:bot_training">
+            <lightning-accordion allow-multiple-sections-open active-section-name="cpif">
+                <!-- ファイルアップローダー -->
+                <lightning-accordion-section name="cfu" label="ファイルアップローダー">
+                    <div class="slds-m-top_small slds-m-left_medium">
+                        <p>ファイルのアップロード(3MBまで)を行うコンポーネントです。</p>
+                        <p>保存先を選んでアップロードしてください。選ばない場合はファイルタブに保存されます。</p>
+                    </div>
+                    <c-custom-file-uploader></c-custom-file-uploader>
+                </lightning-accordion-section>
+
+                <!-- ダウンローダー -->
+                <lightning-accordion-section name="Dow" label="ファイルダウンローダー">
+                    <div class="slds-m-top_small slds-m-left_medium">
+                        <p>ファイルのダウンロードを行います。</p>
+                        <p>指定したオブジェクトからファイルを選び、ダウンロードボタンを押してください。</p>
+                    </div>
+                    <c-custom-downloader></c-custom-downloader>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </lightning-card>
+    </div>
+</template>

@@ -1,0 +1,65 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/custom2FileUpload2": [
+                "custom2FileUpload2/custom2FileUpload2.js"
+            ],
+            "c/customFileUploader": [
+                "customFileUploader/customFileUploader.js"
+            ],
+            "c/lwctraining": [
+                "lwctraining/lwctraining.js"
+            ],
+            "c/customBunner": [
+                "customBunner/customBunner.js"
+            ],
+            "c/customAccodion": [
+                "customAccodion/customAccodion.js"
+            ],
+            "c/customDownloader": [
+                "customDownloader/customDownloader.js"
+            ],
+            "c/testfileDownload": [
+                "testfileDownload/testfileDownload.js"
+            ],
+            "c/customCommunity": [
+                "customCommunity/customCommunity.js"
+            ],
+            "c/apptest": [
+                "apptest/apptest.js"
+            ],
+            "c/bikeComponent": [
+                "bikeComponent/bikeComponent.js"
+            ],
+            "c/tile": [
+                "tile/tile.js"
+            ],
+            "c/data": [
+                "data/data.js"
+            ],
+            "c/detail": [
+                "detail/detail.js"
+            ],
+            "c/list": [
+                "list/list.js"
+            ],
+            "c/selector": [
+                "selector/selector.js"
+            ],
+            "c/hairStyle": [
+                "hairStyle/hairStyle.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

@@ -1,0 +1,44 @@
+<!-- カスタムファイルアップローダー -->
+<template>
+    <div class="spinArea">
+        <!-- メッセージ -->
+        <div class="slds-p-top_x-small slds-m-horizontal_x-small">
+            <c-custom-banner is-closeable></c-custom-banner>
+        </div>
+        <!-- コンテンツ -->
+        <div class="slds-form-element">
+            <div class="slds-form-element__control slds-m-top_x-small">
+                <div class="slds-file-selector slds-file-selector_images" ondrop={onDataDrop} ondragover={onDrag} ondragleave={onDend}>
+                    <!-- ここでファイルがあるかないかで条件を作る -->
+                    <div class={clsDrag}>
+                        <!-- ボディ -->
+                        <lightning-button-icon class={clsClearBtn} icon-name="utility:close" alternative-text="クリア" onclick={doClear}></lightning-button-icon>
+                        <input type="file" class="slds-file-selector__input slds-assistive-text fileReader" id="file-upload-input-01" aria-describedby="file-selector-id" aria-labelledby="file-selector-primary-label file-selector-secondary-label" onchange={onDataImport} />
+                        <label class="slds-file-selector__body" for="file-upload-input-01">
+                            <span class="slds-file-selector__button slds-button slds-button_neutral">
+                                <lightning-icon class="slds-button__icon slds-button__icon_left icn-style" icon-name="utility:upload" alternative-text="Upload File" size="xx-small"></lightning-icon>
+                                <p>{btnLabel}</p>
+                            </span>
+                            <span if:false={isExist} class="slds-file-selector__text slds-medium-show">
+                                <p>{txtLabel}</p>
+                            </span>
+                            <lightning-icon if:true={isExist} class="slds-m-horizontal_x-small" icon-name={iconName} alternative-text="icon"></lightning-icon>
+                            <span if:true={isExist} class="slds-text-color_weak slds-p-right_x-small">{fileName}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ボタン・選択リスト -->
+        <div class="slds-grid slds-p-top_x-small">
+            <div class="slds-col slds-size_10-of-12">
+                <lightning-combobox label="添付先：購入品" name="cbox" value={selectRec} options={dataRec} onchange={handleSelectRec}></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-m-top_large">
+                <lightning-button class="slds-p-left_x-small" label="アップロード" alternative-text="アップロード" variant="brand" onclick={doSave} disabled={isDisabled}></lightning-button>
+            </div>
+        </div>
+        <!-- スピナー -->
+        <lightning-spinner class={loading} alternative-text="Loading" size="medium"></lightning-spinner>
+    </div>
+</template>
