@@ -1,0 +1,15 @@
+.msgStyleOne {
+	font-family: 'Arial';
+    font-weight: bold;
+    font-size: 24px;
+}
+.msgStyleTwo {
+	font-family: 'Arial';
+    font-size: 16px;
+}
+.cardStyle {
+    background-color: white;
+}
+.linkStyle {
+    cursor: pointer;
+}

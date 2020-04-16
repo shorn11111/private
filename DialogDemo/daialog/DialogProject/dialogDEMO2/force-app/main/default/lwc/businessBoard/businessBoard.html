@@ -1,0 +1,25 @@
+<template>
+    <!-- ボード -->
+    <lightning-card>
+        <h1 class="slds-text-heading_small font slds-p-left_medium slds-p-bottom_medium ">今後のTodo(納期順)</h1>
+        <div class="slds-p-left_small slds-size_3-of-4">
+            <ul class="slds-has-dividers_around-space">
+                 <!-- エラーメッセージ -->
+                <div if:false={dataArray} class="error">
+                    <p>{error}</p>
+                </div>
+                <!-- 各レコード情報振り分け -->
+                <template for:each={dataArray} for:item="Bus" for:index="idx">
+                    <li class="slds-item" key={Bus.BoardId}>
+                        <div class="slds-tile__title slds-text-heading_small">
+                            <a name={Bus.BoardId} onclick={handleLink}>取引名:{Bus.BoardName}</a>
+                            <p>金額:¥{Bus.BoardMoney}</p>
+                            <p>有効期限:{Bus.BoardDate}</p>
+                            <p>納期:{Bus.BoardDelivery}</p>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template>

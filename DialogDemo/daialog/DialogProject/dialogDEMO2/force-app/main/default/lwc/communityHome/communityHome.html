@@ -1,0 +1,23 @@
+<!-- コミュニティ：ホーム -->
+<template>
+    <div class="slds-align_absolute-center">
+        <div class="slds-grid">
+            <!-- カルーセル -->
+            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                <c-community-carousel image-array={imgSrc}></c-community-carousel>
+            </div>
+            <!-- 取引リンク -->
+            <div class="slds-size_1-of-2 slds-p-horizontal_small">
+                <div class="slds-p-vertical_large slds-text-align_center">
+                    <span class="msgStyleOne"><p>{msgTextOne}</p></span>
+                    <span class="msgStyleTwo"><p>{msgTextTwo}</p></span>
+                </div>
+                <div class="slds-p-vertical_large slds-align_absolute-center">
+                    <div class="linkStyle" onclick={handleClick}>
+                        <img src={businessLink} alt="お取引を確認する" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
